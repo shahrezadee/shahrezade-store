@@ -8,14 +8,14 @@
   --ink:#070908;--bg:#0b0f0d;--surf:#111815;--raise:#17231e;--em:#0f3d33;--em2:#1d7360;
   --gold:#c9a55c;--gold2:#ead9aa;--tx:#ece7dc;--mut:#98a39c;
   --line:rgba(201,165,92,.22);--line2:rgba(236,231,220,.09);
-  --ok:#63c29a;--warn:#e2ab4f;--bad:#dd7461;--ig:#e3a1bb;--tt:#86d3d8;
+  --ok:#63c29a;--warn:#e2ab4f;--bad:#dd7461;--ig:#e3a1bb;--tt:#86d3d8;--fb:#8fb0ee;--yt:#ee9388;--pin:#e7a0b0;--wa:#7fd39a;--tg:#84c4ee;--vb:#b9a2ee;
   --em3:#0a2a23;--ov:rgba(236,231,220,.06);--lane:rgba(17,24,21,.6);--ongold:#0b0f0d;
   --disp:'Forum',Georgia,'Times New Roman',serif;--body:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif}
 :root[data-th=velvet]{--ink:#000;--bg:#050505;--surf:#0f0f0f;--raise:#1a1a1a;--em:#161513;--em3:#0b0b0a;--em2:#75684a;--gold:#d4af61;--gold2:#f0deb0;--tx:#efeae0;--mut:#9c978c;--lane:rgba(15,15,15,.6)}
 :root[data-th=garnet]{--ink:#0d0607;--bg:#120a0b;--surf:#1b1012;--raise:#27171a;--em:#4a1420;--em3:#2a0c13;--em2:#a23d50;--tx:#f0e6dc;--mut:#ab9a98;--lane:rgba(27,16,18,.6)}
 :root[data-th=sapphire]{--ink:#05080d;--bg:#090d14;--surf:#10161f;--raise:#18212e;--em:#13294a;--em3:#0b1a30;--em2:#3d72ad;--tx:#e9ebee;--mut:#97a1b0;--lane:rgba(16,22,31,.6)}
 :root[data-th=ivory]{color-scheme:light;--ink:#0c2a23;--bg:#f5efe3;--surf:#fffcf5;--raise:#efe7d6;--em:#0f3d33;--em3:#0a2a23;--em2:#1d7360;--gold:#a8842f;--gold2:#73560f;--tx:#1d2622;--mut:#66706a;
-  --line:rgba(168,132,47,.38);--line2:rgba(29,38,34,.13);--ok:#1b7f55;--warn:#9a6500;--bad:#b23f2c;--ig:#a93d68;--tt:#0f7781;--ov:rgba(29,38,34,.05);--lane:rgba(255,252,245,.72);--ongold:#fffdf7}
+  --line:rgba(168,132,47,.38);--line2:rgba(29,38,34,.13);--ok:#1b7f55;--warn:#9a6500;--bad:#b23f2c;--ig:#a93d68;--tt:#0f7781;--fb:#2a56b0;--yt:#b3261e;--pin:#a31b3a;--wa:#12773a;--tg:#126a9e;--vb:#5a3fae;--ov:rgba(29,38,34,.05);--lane:rgba(255,252,245,.72);--ongold:#fffdf7}
 html,body{height:100%}
 body{background:var(--bg);color:var(--tx);font:14px/1.5 var(--body);overflow:hidden}
 #bgimg,#bgdim{position:fixed;inset:0;z-index:0;pointer-events:none}
@@ -83,7 +83,8 @@ textarea{resize:vertical;min-height:84px;line-height:1.5}
 .c-foot{justify-content:space-between;color:var(--mut);font-size:12.5px;margin-top:2px}
 .sp{flex:1}
 .pl{font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:2px 6px;border-radius:4px;border:1px solid currentColor}
-.pl.ig{color:var(--ig)}.pl.tt{color:var(--tt)}
+.pl{color:var(--mut);white-space:nowrap}.pl.ig{color:var(--ig)}.pl.tt{color:var(--tt)}.pl.fb,.pl.fbp,.pl.ms{color:var(--fb)}.pl.yt{color:var(--yt)}.pl.pin{color:var(--pin)}.pl.wa{color:var(--wa)}.pl.tg{color:var(--tg)}.pl.vb{color:var(--vb)}.pl.em{color:var(--gold2)}
+.lgo{display:inline-grid;place-items:center;flex:none}.lgo img{width:100%;height:100%;object-fit:contain;display:block}
 .st{font-size:11.5px;padding:2px 8px;border-radius:99px;background:var(--ov);color:var(--mut)}
 .st-wip{color:var(--warn);background:rgba(226,171,79,.12)}.st-review{color:var(--tt);background:rgba(134,211,216,.1)}
 .st-done,.st-pub{color:var(--ok);background:rgba(99,194,154,.12)}.st-hold{color:var(--bad);background:rgba(221,116,97,.1)}
@@ -241,8 +242,8 @@ html:not(.m) .only-m{display:none}
 <div class="app">
   <aside class="side">
     <div class="brand">
-      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><g fill="none" stroke="#c9a55c" stroke-width="1.2"><rect x="7" y="7" width="20" height="20"/><rect x="7" y="7" width="20" height="20" transform="rotate(45 17 17)"/><circle cx="17" cy="17" r="4.2" fill="#c9a55c" stroke="none"/></g></svg>
-      <div><b>Shahrezade</b><small>Контент-план</small></div>
+      <span class="lgo" data-logo="34"></span>
+      <div><b data-brand>Shahrezade</b><small>Контент-план</small></div>
     </div>
     <nav class="nav" id="nav" aria-label="Разделы"></nav>
     <div class="foot">
@@ -252,7 +253,7 @@ html:not(.m) .only-m{display:none}
   </aside>
   <div class="col">
     <header class="top">
-      <div class="mbrand"><span style="flex:1">✦ Shahrezade</span><button class="ava" data-ava data-act="go" data-v="menu" aria-label="Меню: профиль и настройки"></button></div>
+      <div class="mbrand"><span style="flex:1;display:flex;align-items:center;gap:8px;min-width:0"><span class="lgo" data-logo="18"></span><span data-brand>Shahrezade</span></span><button class="ava" data-ava data-act="go" data-v="menu" aria-label="Меню: профиль и настройки"></button></div>
       <h1 id="title"></h1><p id="sub"></p>
       <button class="btn gold" data-act="new">+ Новая карточка</button>
     </header>
@@ -282,7 +283,20 @@ const ROL=['ролик','ролика','роликов'],CRD=['карточка'
 const STAGES=[['ideas','Идеи'],['scripts','Сценарии Reels'],['shoot','Съёмка'],['edit','Монтаж'],['publish','Публикация'],['results','Результаты']];
 const STG=STAGES.map(s=>s[0]),SNAME=Object.fromEntries(STAGES);
 const STATUS={todo:'Не начато',wip:'В работе',review:'На проверке',done:'Готово',pub:'Опубликовано',hold:'Отложено'};
-const PL={ig:'Instagram',tt:'TikTok'};
+const PL={ig:'Instagram',tt:'TikTok',fb:'Facebook',yt:'YouTube',pin:'Pinterest'},PLS={ig:'IG',tt:'TT',fb:'FB',yt:'YT',pin:'PIN'};
+const un=v=>String(v).trim().replace(/^@/,''),dg=v=>String(v).replace(/\D/g,'');
+const NET={ig:['Instagram','c',v=>'https://instagram.com/'+un(v),'IG'],tt:['TikTok','c',v=>'https://www.tiktok.com/@'+un(v),'TT'],fb:['Facebook','c',v=>'https://facebook.com/'+un(v),'FB'],fbp:['Facebook Page','c',v=>'https://facebook.com/'+un(v),'FB'],
+  yt:['YouTube','c',v=>'https://youtube.com/@'+un(v),'YT'],pin:['Pinterest','c',v=>'https://pinterest.com/'+un(v),'PIN'],
+  wa:['WhatsApp','m',v=>'https://wa.me/'+dg(v),'WA'],tg:['Telegram','m',v=>'https://t.me/'+(/^[+\d\s()-]+$/.test(v)?'+'+dg(v):un(v)),'TG'],vb:['Viber','m',v=>'viber://chat?number=%2B'+dg(v),'VB'],ms:['Messenger','m',v=>'https://m.me/'+un(v),'MS'],
+  em:['Эл. почта','e',v=>'mailto:'+String(v).trim(),'@']};
+const urlOf=a=>/^(https?|viber|tg|mailto):/i.test(a.v.trim())?a.v.trim():NET[a.t][2](a.v);
+function sendUrl(a,t){const e=encodeURIComponent(t);return a.t==='wa'?urlOf(a)+'?text='+e:a.t==='vb'?'viber://forward?text='+e:a.t==='em'?'mailto:'+a.v.trim()+'?subject='+encodeURIComponent((P.brand||'Shahrezade')+': контент')+'&body='+e:urlOf(a)}
+const online=()=>{try{if(window.App&&App.online)return!!App.online()}catch(e){}return navigator.onLine!==false};
+function openUrl(u){if(!online())toast('Нет интернета. Аккаунт откроется, когда появится связь.');
+  if(window.App&&App.open){if(!App.open(u))toast('Не нашлось приложения, чтобы открыть эту ссылку');return}
+  const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
+function copyText(t,msg){const ok=()=>toast(msg||'Скопировано');if(window.App&&App.copy){App.copy(t);return ok()}
+  try{navigator.clipboard.writeText(t).then(ok,()=>toast('Не удалось скопировать'))}catch(e){toast('Не удалось скопировать')}}
 const MET=[['views','Просмотры'],['reach','Охваты'],['saves','Сохранения'],['clicks','Переходы'],['sales','Продажи']];
 const VIEWS={board:'Конвейер',ideas:'Идеи',scripts:'Сценарии Reels',shoot:'Съёмка',edit:'Монтаж',publish:'Публикация',results:'Результаты',compare:'Сравнение роликов',calendar:'Календарь',advice:'Рекомендации',menu:'Меню'};
 const SUB={board:'Все карточки по этапам. Перетащите карточку в другой столбец, чтобы сменить этап.',ideas:'Темы и задумки до сценария.',scripts:'Хук, раскадровка и текст для Reels и TikTok.',shoot:'Что снимаем, в каком стиле и где лежат материалы.',edit:'Ролики в монтаже и на проверке.',publish:'Готовые ролики с датой выхода и текстом.',results:'Показатели опубликованных роликов.',compare:'Выберите до четырёх роликов и сравните показатели.',calendar:'План публикаций по дням.',advice:'Выводы считаются по вашим показателям.',menu:'Профиль, оформление и данные приложения.'};
@@ -299,7 +313,7 @@ try{S.mode=localStorage.getItem('shz-mode')||'auto'}catch(e){}
 const NATIVE=!!(window.App&&window.App.exit);if(NATIVE)S.mode='phone';
 
 /* ——— personal profile and app look: kept on this device only ——— */
-const PK='shz-prefs-v1',PDEF={name:'',role:'',phone:'',ig:'@shop.shahrezade',tt:'@shahrezadeonline',photo:'',theme:'emerald',bg:'none',bgimg:'',dim:82,fh:'forum',fb:'manrope',scale:100,start:'ideas',pin:''};
+const PK='shz-prefs-v1',PDEF={name:'',role:'',phone:'',ig:'@shop.shahrezade',tt:'@shahrezadeonline',photo:'',logo:'',brand:'Shahrezade',accounts:[{id:'a1',t:'ig',name:'Магазин',v:'@shop.shahrezade'},{id:'a2',t:'tt',name:'',v:'@shahrezadeonline'}],theme:'emerald',bg:'none',bgimg:'',dim:82,fh:'forum',fb:'manrope',scale:100,start:'ideas',pin:''};
 let P={...PDEF};try{P={...PDEF,...JSON.parse(localStorage.getItem(PK)||'{}')}}catch(e){}
 const THEMES=[['emerald','Изумруд и золото',['#0b0f0d','#0f3d33','#c9a55c'],0],['velvet','Чёрный бархат',['#050505','#1a1a1a','#d4af61'],0],['garnet','Гранат',['#120a0b','#4a1420','#c9a55c'],0],['sapphire','Сапфир',['#090d14','#13294a','#c9a55c'],0],['ivory','Слоновая кость',['#f5efe3','#0f3d33','#a8842f'],1]];
 const SYS="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif";
@@ -310,6 +324,8 @@ const PAT={girih:svgBg(72,"<rect x='22' y='22' width='28' height='28'/><rect x='
   arches:svgBg(48,"<path d='M0 24a24 24 0 0 1 48 0M-24 48a24 24 0 0 1 48 0M24 48a24 24 0 0 1 48 0'/>"),
   lattice:svgBg(40,"<path d='M20 0l20 20-20 20L0 20zM20 10l10 10-10 10-10-10z'/>")};
 const BGS=[['none','Без фона'],['girih','Звёзды'],['arches','Арки'],['lattice','Решётка'],['photo','Своё фото']];
+const STAR=`<svg width="100%" height="100%" viewBox="0 0 34 34" aria-hidden="true"><g fill="none" stroke="#c9a55c" stroke-width="1.2"><rect x="7" y="7" width="20" height="20"/><rect x="7" y="7" width="20" height="20" transform="rotate(45 17 17)"/><circle cx="17" cy="17" r="4.2" fill="#c9a55c" stroke="none"/></g></svg>`;
+const logoIn=()=>P.logo?`<img src="${P.logo}" alt="">`:STAR;
 const avaIn=()=>P.photo?`<img src="${P.photo}" alt="">`:h(((P.name||'Shahrezade').trim()[0]||'S').toUpperCase());
 function applyP(){const r=document.documentElement,th=THEMES.find(t=>t[0]===P.theme)||THEMES[0];
   if(th[0]==='emerald')delete r.dataset.th;else r.dataset.th=th[0];
@@ -319,6 +335,8 @@ function applyP(){const r=document.documentElement,th=THEMES.find(t=>t[0]===P.th
   im.style.backgroundImage=ph?`url(${P.bgimg})`:PAT[P.bg]||'none';im.classList.toggle('photo',!!ph);
   document.getElementById('bgdim').style.opacity=ph?P.dim/100:0;
   document.querySelectorAll('[data-ava]').forEach(e=>e.innerHTML=avaIn());
+  document.querySelectorAll('[data-logo]').forEach(e=>{e.style.width=e.style.height=e.dataset.logo+'px';e.innerHTML=logoIn()});
+  document.querySelectorAll('[data-brand]').forEach(e=>e.textContent=P.brand||'Shahrezade');
   const n=document.getElementById('me-name');if(n)n.textContent=P.name||'Ваш профиль';
   try{if(NATIVE&&App.bars)App.bars(th[2][0],!!th[3])}catch(e){}}
 function saveP(){try{localStorage.setItem(PK,JSON.stringify(P))}catch(e){toast('Не хватило памяти. Выберите изображение поменьше.')}applyP()}
@@ -326,14 +344,15 @@ function pick(kind){const i=document.createElement('input');i.type='file';i.acce
   i.onchange=()=>{const f=i.files&&i.files[0];i.remove();if(!f)return;const rd=new FileReader();
     rd.onload=()=>{const im=new Image();im.onerror=()=>toast('Не удалось открыть изображение');
       im.onload=()=>{const c=document.createElement('canvas'),x=c.getContext('2d');
-        if(kind==='photo'){const q=Math.min(im.width,im.height);c.width=c.height=320;x.drawImage(im,(im.width-q)/2,(im.height-q)/2,q,q,0,0,320,320);P.photo=c.toDataURL('image/jpeg',.86)}
+        if(kind==='logo'){const k=Math.min(1,256/Math.max(im.width,im.height));c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);x.drawImage(im,0,0,c.width,c.height);P.logo=c.toDataURL('image/png')}
+        else if(kind==='photo'){const q=Math.min(im.width,im.height);c.width=c.height=320;x.drawImage(im,(im.width-q)/2,(im.height-q)/2,q,q,0,0,320,320);P.photo=c.toDataURL('image/jpeg',.86)}
         else{const k=Math.min(1,1280/Math.max(im.width,im.height));c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);x.drawImage(im,0,0,c.width,c.height);P.bgimg=c.toDataURL('image/jpeg',.72);P.bg='photo'}
-        saveP();renderMain(true);toast(kind==='photo'?'Фото профиля обновлено':'Фон установлен')};
+        saveP();renderMain(true);toast(kind==='logo'?'Логотип обновлён':kind==='photo'?'Фото профиля обновлено':'Фон установлен')};
       im.src=rd.result};rd.readAsDataURL(f)};i.click()}
 let pinBuf='',hidAt=0;
 function hashPin(v){let x=2166136261;for(const c of 'shz:'+v){x^=c.charCodeAt(0);x=Math.imul(x,16777619)}return(x>>>0).toString(36)}
 function drawLock(msg){const l=document.getElementById('lock');l.hidden=false;
-  l.innerHTML=`<svg width="54" height="54" viewBox="0 0 34 34" aria-hidden="true"><g fill="none" stroke="#c9a55c" stroke-width="1"><rect x="7" y="7" width="20" height="20"/><rect x="7" y="7" width="20" height="20" transform="rotate(45 17 17)"/><circle cx="17" cy="17" r="4" fill="#c9a55c" stroke="none"/></g></svg><h2>Shahrezade</h2>
+  l.innerHTML=`<span class="lgo" style="width:60px;height:60px">${logoIn(60)}</span><h2>${h(P.brand||'Shahrezade')}</h2>
    <p style="margin:0;color:var(--mut)" role="status">${msg||'Введите код-пароль'}</p><div class="pdots">${[0,1,2,3].map(i=>`<i class="${i<pinBuf.length?'f':''}"></i>`).join('')}</div>
    <div class="pad">${[1,2,3,4,5,6,7,8,9].map(n=>`<button data-act="key" data-v="${n}">${n}</button>`).join('')}<span></span><button data-act="key" data-v="0">0</button><button data-act="key" data-v="x" aria-label="Стереть"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6"/></svg></button></div>`}
 function lockKey(v){if(v==='x')pinBuf=pinBuf.slice(0,-1);else if(pinBuf.length<4)pinBuf+=v;
@@ -404,12 +423,13 @@ function renderBar(){
   if(S.mobile&&STG.includes(v)&&v!=='results')chips=STG.slice(0,5).map(s=>`<button class="chip ${v===s?'on':''}" data-act="go" data-v="${s}">${SNAME[s]}</button>`).join('');
   if(S.mobile&&['results','compare'].includes(v))chips=[['results','Ролики'],['compare','Сравнение']].map(([s,l])=>`<button class="chip ${v===s?'on':''}" data-act="go" data-v="${s}">${l}</button>`).join('');
   if(v==='menu'||v==='advice'){$('#bar').innerHTML='';return}
-  const n=['pl','cat','goal','fmt','st'].filter(k=>f[k]).length+(f.best?1:0);
-  $('#bar').innerHTML=(chips?`<div class="chips">${chips}</div>`:'')+
+  const ap=[...new Set((P.accounts||[]).map(a=>a.t==='fbp'?'fb':a.t).filter(t=>PL[t]))];
+  const acc=ap.length?`<div class="chips"><button class="chip ${!f.pl?'on':''}" data-act="acc" data-v="">Все аккаунты</button>${ap.map(t=>`<button class="chip ${f.pl===t?'on':''}" data-act="acc" data-v="${t}"><span class="pl ${t}" style="border:0;padding:0">${PLS[t]}</span> ${PL[t]}</button>`).join('')}</div>`:'';
+  const n=['cat','goal','fmt','st'].filter(k=>f[k]).length+(f.best?1:0);
+  $('#bar').innerHTML=acc+(chips?`<div class="chips">${chips}</div>`:'')+
    `<input type="search" id="f-q" data-f="q" placeholder="Поиск по названию и тексту" value="${h(f.q)}" aria-label="Поиск">
     <button class="btn sm only-m" data-act="fx">Фильтры${n?' · '+n:''}</button>
     <div class="fx ${S.fx?'open':''}">
-    <select id="f-pl" data-f="pl" aria-label="Платформа"><option value="">Все платформы</option>${Object.entries(PL).map(([k,l])=>`<option value="${k}"${f.pl===k?' selected':''}>${l}</option>`).join('')}</select>
     <select id="f-cat" data-f="cat" aria-label="Категория">${opts(vals('categories','category'),f.cat,'Все категории')}</select>
     <select id="f-goal" data-f="goal" aria-label="Цель">${opts(vals('goals','goal'),f.goal,'Все цели')}</select>
     <select id="f-fmt" data-f="fmt" aria-label="Формат">${opts(vals('formats','format'),f.fmt,'Все форматы')}</select>
@@ -420,7 +440,7 @@ function renderBar(){
 function renderAll(){setMode();renderNav();renderBar();$('#title').textContent=VIEWS[S.view];$('#sub').textContent=SUB[S.view];renderMain(true)}
 
 /* ——— cards ——— */
-function pls(c){return(c.platforms||[]).map(p=>`<span class="pl ${p}">${p==='ig'?'IG':'TT'}</span>`).join('')}
+function pls(c){return(c.platforms||[]).filter(p=>PL[p]).map(p=>`<span class="pl ${p}">${PLS[p]}</span>`).join('')}
 function focusLine(c){
   if(c.stage==='ideas')return c.goal?`<b>Цель:</b> ${h(c.goal)}`:'';
   if(c.stage==='scripts')return c.hook?`<b>Хук:</b> ${h(c.hook)}`:h(c.script);
@@ -510,10 +530,14 @@ const MENU={
 profile:()=>{const f=(k,l,ph)=>`<label class="fl"><span>${l}</span><input type="text" id="p-${k}" data-p="${k}" value="${h(P[k])}" placeholder="${ph}"></label>`;
   return`<div class="two"><div><div class="sec"><h2>Фото профиля</h2><div class="panel"><div class="inl" style="align-items:center;flex-wrap:wrap"><span class="ava lg">${avaIn()}</span>
    <button class="btn sm" data-act="pick" data-k="photo">${P.photo?'Заменить фото':'Выбрать фото'}</button>${P.photo?'<button class="btn sm bad" data-act="imgdel" data-k="photo">Убрать</button>':''}</div></div></div>
+   <div class="sec"><h2>Логотип и название</h2><div class="panel"><div class="inl" style="align-items:center;flex-wrap:wrap"><span class="lgo" style="width:64px;height:64px">${logoIn()}</span>
+    <button class="btn sm" data-act="pick" data-k="logo">${P.logo?'Заменить логотип':'Выбрать логотип'}</button>${P.logo?'<button class="btn sm bad" data-act="imgdel" data-k="logo">Вернуть стандартный</button>':''}</div>
+    <label class="fl" style="margin-top:12px"><span>Название в приложении</span><input type="text" id="p-brand" data-p="brand" value="${h(P.brand)}" placeholder="Shahrezade"></label>
+    ${NATIVE?`<button class="btn sm" style="margin-top:12px" data-act="pinlogo">Значок с логотипом на главный экран</button><p class="meta" style="margin:8px 0 0">Создаёт на главном экране значок приложения с вашим логотипом и названием. Нужен Android 8 или новее.</p>`:''}</div></div>
    <div class="sec"><h2>Код-пароль</h2><div class="panel">${P.pin?`<p style="margin:0 0 10px">Код-пароль включён. Приложение спрашивает его при каждом открытии.</p><button class="btn sm bad" data-act="pinoff">Отключить код-пароль</button>`
     :`<form class="inl" data-pin="1"><input type="password" inputmode="numeric" maxlength="4" id="p-pin" placeholder="4 цифры" autocomplete="off" aria-label="Новый код-пароль"><button class="btn sm">Включить</button></form>`}
     <p class="meta" style="margin:10px 0 0">Защищает от случайного доступа к плану. Если забудете код, сбросить его можно только очисткой данных приложения.</p></div></div></div>
-   <div class="sec"><h2>Аккаунт</h2><div class="panel" style="display:flex;flex-direction:column;gap:12px">${f('name','Имя','Как к вам обращаться')}${f('role','Должность','Например: владелец бренда')}${f('phone','Телефон или WhatsApp','+992 …')}${f('ig','Instagram','@shop.shahrezade')}${f('tt','TikTok','@shahrezadeonline')}
+   <div class="sec"><h2>Аккаунт</h2><div class="panel" style="display:flex;flex-direction:column;gap:12px">${f('name','Имя','Как к вам обращаться')}${f('role','Должность','Например: владелец бренда')}${f('phone','Телефон или WhatsApp','+992 …')}
     <p class="meta" style="margin:0">Профиль хранится только на этом устройстве. Регистрация и вход не нужны.</p></div></div></div>`},
 look:()=>{const o=(act,k,on,inner,l)=>`<button class="opt ${on?'on':''}" data-act="${act}" data-v="${k}" aria-pressed="${on}">${inner}<small>${l}</small></button>`;
   return`<div class="sec"><h2>Тема</h2><div class="opts">${THEMES.map(([k,l,c])=>o('theme',k,P.theme===k,`<span class="sw">${c.map(x=>`<i style="background:${x}"></i>`).join('')}</span>`,l)).join('')}</div></div>
@@ -527,6 +551,17 @@ look:()=>{const o=(act,k,on,inner,l)=>`<button class="opt ${on?'on':''}" data-ac
     <p class="meta" style="margin:8px 0 0">Открывается первым при запуске на смартфоне.</p></div></div>
    ${NATIVE?'':`<div class="sec"><h2>Вид интерфейса</h2><div class="seg" style="max-width:340px">${[['auto','Авто'],['desk','Компьютер'],['phone','Смартфон']].map(([k,l])=>`<button class="${S.mode===k?'on':''}" data-act="mode" data-v="${k}">${l}</button>`).join('')}</div></div>`}
    <button class="btn sm" data-act="lookreset">Вернуть оформление по умолчанию</button>`},
+acc:()=>{const A=P.accounts||[],on=online();
+  return`<div class="panel" style="margin-bottom:16px"><div class="sync ${on?'':'warn'}">${on?'Онлайн. Аккаунты открываются сразу.':'Офлайн. План работает, аккаунты откроются при подключении.'}</div></div>
+  <div class="two">${[['c','Страницы и каналы'],['m','Мессенджеры'],['e','Электронная почта']].map(([g,l])=>{const a=A.filter(x=>NET[x.t]&&NET[x.t][1]===g);
+   return`<div class="sec"><h2>${l} <small>${a.length}</small></h2><div class="panel">${a.map(x=>`<div class="rowl"><span class="pl ${x.t}">${NET[x.t][3]}</span><div class="t">${h(x.name||NET[x.t][0])}<small>${h(NET[x.t][0]+' · '+x.v)}</small></div>
+    <button class="btn sm" data-act="aopen" data-id="${x.id}">Открыть</button><button class="btn sm" data-act="acopy" data-id="${x.id}">Копировать</button><button class="btn sm bad" data-act="adel" data-id="${x.id}" aria-label="Удалить аккаунт">×</button></div>`).join('')||'<span class="meta">Пока ничего не добавлено.</span>'}</div></div>`}).join('')}
+  <div class="sec"><h2>Добавить аккаунт</h2><div class="panel"><form data-acc="1" style="display:flex;flex-direction:column;gap:10px">
+   <select id="a-t" aria-label="Тип аккаунта"><optgroup label="Страницы и каналы">${['ig','tt','fb','fbp','yt','pin'].map(k=>`<option value="${k}">${NET[k][0]}</option>`).join('')}</optgroup><optgroup label="Мессенджеры">${['wa','tg','vb','ms'].map(k=>`<option value="${k}">${NET[k][0]}</option>`).join('')}</optgroup><optgroup label="Почта"><option value="em">Электронная почта</option></optgroup></select>
+   <input type="text" id="a-v" placeholder="@имя, ссылка, номер телефона или e-mail" aria-label="Адрес аккаунта">
+   <input type="text" id="a-n" placeholder="Название для себя, например «Опт»" aria-label="Название аккаунта">
+   <button class="btn gold">Добавить</button></form>
+   <p class="meta" style="margin:10px 0 0">Аккаунтов каждого вида может быть несколько. Приложение хранит только адреса и открывает нужную страницу или чат; пароли оно не спрашивает и не хранит.</p></div></div></div>`},
 lists:()=>`<div class="two">${LISTS.map(([k,l])=>`<div class="sec"><h2>${l}</h2><div class="panel"><div class="tags">${S.lists[k].map((x,i)=>`<span class="tag">${h(x)}<button data-act="ldel" data-k="${k}" data-i="${i}" aria-label="Удалить ${h(x)}">×</button></span>`).join('')||'<span class="meta">Список пуст</span>'}</div>
    <form class="inl" data-list="${k}"><input type="text" id="l-${k}" placeholder="Добавить значение" aria-label="Добавить в список «${l}»"><button class="btn sm">Добавить</button></form></div></div>`).join('')}</div>`,
 data:()=>{const exN=S.cards.filter(c=>c.example).length;
@@ -536,9 +571,9 @@ data:()=>{const exN=S.cards.filter(c=>c.example).length;
    <button class="btn sm" data-act="bk">${NATIVE?'Сохранить копию':'Скопировать копию'}</button>
    <p class="lab" style="margin:16px 0 6px">Восстановление</p><textarea id="rs" rows="3" placeholder="Вставьте сюда текст сохранённой копии"></textarea>
    <button class="btn sm bad" style="margin-top:8px" data-act="rst">Восстановить из копии</button></div></div></div>`}};
-V.menu=()=>`<div class="hero"><span class="ava lg">${avaIn()}</span><div style="min-width:0"><h2>${h(P.name||'Ваш профиль')}</h2><p>${h([P.role,'Shahrezade'].filter(Boolean).join(' · '))}</p>
-  <p>${h([P.ig&&'Instagram '+P.ig,P.tt&&'TikTok '+P.tt].filter(Boolean).join(' · '))}</p></div></div>
-  <div class="chips" style="margin-bottom:16px" role="tablist">${[['profile','Профиль'],['look','Оформление'],['lists','Справочники'],['data','Данные']].map(([k,l])=>`<button class="chip ${S.tab===k?'on':''}" data-act="tab" data-v="${k}" role="tab" aria-selected="${S.tab===k}">${l}</button>`).join('')}</div>`+MENU[S.tab]();
+V.menu=()=>`<div class="hero"><span class="ava lg">${avaIn()}</span><div style="min-width:0"><h2>${h(P.name||'Ваш профиль')}</h2><p>${h([P.role,P.brand||'Shahrezade'].filter(Boolean).join(' · '))}</p>
+  <p>${h((P.accounts||[]).slice(0,3).map(a=>NET[a.t][0]+' '+a.v).join(' · ')||'Аккаунты ещё не добавлены')}</p></div></div>
+  <div class="chips" style="margin-bottom:16px" role="tablist">${[['profile','Профиль'],['acc','Аккаунты'],['look','Оформление'],['lists','Справочники'],['data','Данные']].map(([k,l])=>`<button class="chip ${S.tab===k?'on':''}" data-act="tab" data-v="${k}" role="tab" aria-selected="${S.tab===k}">${l}</button>`).join('')}</div>`+MENU[S.tab]();
 function renderMain(force){const main=$('#main'),ae=document.activeElement;
   if(!force&&ae&&main.contains(ae)&&(ae.tagName==='TEXTAREA'||ae.type==='text'))return;
   if(!S.ready){main.innerHTML='<div class="empty"><p>Загружаем карточки…</p></div>';return}
@@ -558,7 +593,7 @@ function openEd(c){ED=c?structuredClone(c):blank();ED.m=ED.m||{};ED.urls=ED.urls
    ${inp('title','Название','','placeholder="Например: распаковка новой поставки"').replace('value=""',`value="${h(ED.title)}"`)}
    <div class="f2"><label class="fl"><span>Раздел</span><select id="e-stage">${STAGES.map(([k,l])=>`<option value="${k}"${ED.stage===k?' selected':''}>${l}</option>`).join('')}</select></label>
    <label class="fl"><span>Статус</span><select id="e-status">${Object.entries(STATUS).map(([k,l])=>`<option value="${k}"${ED.status===k?' selected':''}>${l}</option>`).join('')}</select></label></div>
-   <div class="fl"><span>Платформы</span><div class="inl">${Object.entries(PL).map(([k,l])=>`<label class="ck"><input type="checkbox" id="e-pl-${k}" data-plck="${k}"${ED.platforms.includes(k)?' checked':''}>${l}</label>`).join('')}<label class="ck"><input type="checkbox" id="e-best"${ED.best?' checked':''}>✦ Лучший формат</label></div></div>
+   <div class="fl"><span>Платформы</span><div class="inl" style="flex-wrap:wrap">${Object.entries(PL).map(([k,l])=>`<label class="ck"><input type="checkbox" id="e-pl-${k}" data-plck="${k}"${ED.platforms.includes(k)?' checked':''}>${l}</label>`).join('')}<label class="ck"><input type="checkbox" id="e-best"${ED.best?' checked':''}>✦ Лучший формат</label></div></div>
    <div class="f2">${inp('goal','Цель',ED.goal,'list="dl-g" placeholder="Выберите или впишите"')}${inp('category','Категория товара',ED.category,'list="dl-c" placeholder="Выберите или впишите"')}</div>
    <div class="f2">${inp('format','Формат',ED.format,'list="dl-f" placeholder="Выберите или впишите"')}${inp('visual','Визуальный стиль',ED.visual,'list="dl-v" placeholder="Выберите или впишите"')}</div>
    ${dl('dl-g','goals')+dl('dl-c','categories')+dl('dl-f','formats')+dl('dl-v','visuals')}
@@ -567,8 +602,10 @@ function openEd(c){ED=c?structuredClone(c):blank();ED.m=ED.m||{};ED.urls=ED.urls
    <label class="fl"><span>Текст публикации</span><textarea id="e-text" rows="4" placeholder="Подпись, хэштеги, контакт для заказа">${h(ED.text)}</textarea></label>
    <div class="f2"><label class="fl"><span>Дата публикации</span><input type="date" id="e-date" value="${h(ED.date)}"></label>
    <label class="fl"><span>Ссылка на материалы ${link(ED.link)}</span><input type="url" id="e-link" value="${h(ED.link)}" placeholder="https://…"></label></div>
+   <h3 class="dsec">Публикация и отправка</h3>
+   <div class="tags" id="e-pub"></div>
    <h3 class="dsec">Показатели после публикации</h3>
-   ${Object.entries(PL).map(([p,l])=>`<div class="mbox" id="e-mb-${p}"${ED.platforms.includes(p)?'':' hidden'}><div class="inl" style="align-items:center"><span class="pl ${p}">${p==='ig'?'IG':'TT'}</span><b style="font-weight:600">${l}</b><span class="sp"></span>${link(ED.urls[p])}</div>
+   ${Object.entries(PL).map(([p,l])=>`<div class="mbox" id="e-mb-${p}"${ED.platforms.includes(p)?'':' hidden'}><div class="inl" style="align-items:center"><span class="pl ${p}">${PLS[p]}</span><b style="font-weight:600">${l}</b><span class="sp"></span>${link(ED.urls[p])}</div>
     <input type="url" id="e-url-${p}" value="${h(ED.urls[p])}" placeholder="Ссылка на опубликованный ролик" aria-label="Ссылка на ролик в ${l}">
     <div class="mgrid">${MET.map(([k,ml])=>`<label class="fl"><span>${ml}</span><input type="number" min="0" inputmode="numeric" id="e-m-${p}-${k}" value="${h(ED.m[p]&&ED.m[p][k]!=null?ED.m[p][k]:'')}" placeholder="—"></label>`).join('')}</div></div>`).join('')}
    <h3 class="dsec">Комментарии</h3>
@@ -578,7 +615,15 @@ function openEd(c){ED=c?structuredClone(c):blank();ED.m=ED.m||{};ED.urls=ED.urls
   <div class="d-foot"><button class="btn gold" data-act="esave">Сохранить</button>
    ${ED.id&&STG.indexOf(ED.stage)<5?`<button class="btn" data-act="enext">${ED.stage==='publish'?'Опубликовано':SNAME[STG[STG.indexOf(ED.stage)+1]]} →</button>`:''}
    ${ED.id?`<button class="btn" data-act="ereuse">Повторить идею</button><span class="sp"></span><button class="btn bad" data-act="edel">Удалить</button>`:''}</div>`;
-  cms();$('#drawer').hidden=false;$('#scrim').hidden=false;if(!ED.id)$('#e-title').focus()}
+  pubBtns();cms();$('#drawer').hidden=false;$('#scrim').hidden=false;if(!ED.id)$('#e-title').focus()}
+function pubBtns(){const on=Object.keys(PL).filter(p=>$('#e-pl-'+p).checked),A=P.accounts||[];
+  const pg=A.filter(a=>on.includes(a.t==='fbp'?'fb':a.t)),ms=A.filter(a=>NET[a.t]&&NET[a.t][1]!=='c'),nm=a=>NET[a.t][0]+(a.name?' · '+a.name:'');
+  $('#e-pub').innerHTML=pg.map(a=>`<button class="btn sm" data-act="pubgo" data-id="${a.id}"><span class="pl ${a.t}" style="border:0;padding:0">${NET[a.t][3]}</span> Текст в ${h(nm(a))}</button>`).join('')
+   +ms.map(a=>`<button class="btn sm" data-act="pubsend" data-id="${a.id}"><span class="pl ${a.t}" style="border:0;padding:0">${NET[a.t][3]}</span> Отправить: ${h(nm(a))}</button>`).join('')
+   +`<button class="btn sm" data-act="pubcopy">Скопировать текст</button>`+(NATIVE?'<button class="btn sm" data-act="pubshare">Поделиться во все приложения</button>':'')
+   +(pg.length+ms.length?'':'<span class="meta" style="width:100%">Добавьте свои страницы, мессенджеры и почту в «Меню → Аккаунты», чтобы открывать их отсюда.</span>')}
+const pubText=()=>[$('#e-text').value.trim()||$('#e-title').value.trim(),$('#e-link').value.trim()].filter(Boolean).join('\n\n');
+const accBy=id=>(P.accounts||[]).find(a=>a.id===id);
 function cms(){$('#e-cms').innerHTML=ED.comments.length?ED.comments.map((c,i)=>`<div class="cm"><div style="display:flex;gap:8px"><span style="flex:1">${h(c.t)}</span><button class="meta" data-act="cmdel" data-i="${i}" aria-label="Удалить комментарий">×</button></div><small>${c.ts?new Date(c.ts).toLocaleDateString('ru-RU',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):''}</small></div>`).join(''):'<span class="meta">Комментариев пока нет.</span>'}
 function closeEd(){ED=null;$('#drawer').hidden=true;$('#scrim').hidden=true}
 function readEd(){const g=id=>$('#e-'+id).value.trim();
@@ -616,24 +661,37 @@ const ACT={
   ereuse:()=>{if(readEd()){const c=ED;save(c);reuse(c)}},
   edel:t=>{if(!t.dataset.armed){t.dataset.armed=1;t.textContent='Точно удалить?';return}const id=ED.id;S.cards=S.cards.filter(c=>c.id!==id);dropCard(id);closeEd();renderNav();renderMain(true);toast('Карточка удалена')},
   tab:t=>{S.tab=t.dataset.v;renderMain(true)},
+  acc:t=>{S.f.pl=t.dataset.v;renderBar();renderMain(true)},
+  aopen:(t,id)=>{const a=accBy(id);if(a)openUrl(urlOf(a))},
+  acopy:(t,id)=>{const a=accBy(id);if(a)copyText(a.t==='em'||NET[a.t][1]==='m'?a.v:urlOf(a),'Адрес скопирован')},
+  adel:(t,id)=>{if(!t.dataset.armed){t.dataset.armed=1;t.textContent='Удалить?';return}P.accounts=P.accounts.filter(a=>a.id!==id);saveP();renderBar();renderMain(true)},
+  pubgo:(t,id)=>{const a=accBy(id);if(!a)return;copyText(pubText(),'Текст скопирован. Вставьте его в публикацию.');openUrl(urlOf(a))},
+  pubsend:(t,id)=>{const a=accBy(id);if(!a)return;const x=pubText();if(a.t==='ms'||a.t==='tg')copyText(x,'Текст скопирован. Вставьте его в чат.');openUrl(sendUrl(a,x))},
+  pubcopy:()=>copyText(pubText(),'Текст скопирован'),
+  pubshare:()=>{try{App.send(pubText())}catch(e){toast('Не удалось открыть список приложений')}},
+  pinlogo:()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=c.height=192;const x=c.getContext('2d');x.fillStyle='#0b0f0d';x.fillRect(0,0,192,192);
+      const k=Math.min(152/im.width,152/im.height),w=im.width*k,hh=im.height*k;x.drawImage(im,(192-w)/2,(192-hh)/2,w,hh);let r='fail';
+      try{r=App.pinIcon(c.toDataURL('image/png').split(',')[1],P.brand||'Shahrezade')}catch(e){}
+      toast(r==='ok'?'Подтвердите добавление значка на главный экран':r==='old'?'Нужен Android 8 или новее':'Этот экран не поддерживает добавление значков')};
+    im.src=P.logo||'data:image/svg+xml,'+encodeURIComponent(STAR.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" ').replace('width="100%" height="100%"','width="192" height="192"'))},
   theme:t=>{P.theme=t.dataset.v;saveP();renderMain(true)},
   bg:t=>{const v=t.dataset.v;if(v==='photo'&&!P.bgimg)return pick('bg');P.bg=v;saveP();renderMain(true)},
   fh:t=>{P.fh=t.dataset.v;saveP();renderMain(true)},
   fb:t=>{P.fb=t.dataset.v;saveP();renderMain(true)},
   scale:t=>{P.scale=+t.dataset.v;saveP();renderMain(true)},
   pick:t=>pick(t.dataset.k),
-  imgdel:t=>{if(t.dataset.k==='photo')P.photo='';else{P.bgimg='';P.bg='none'}saveP();renderMain(true)},
+  imgdel:t=>{if(t.dataset.k==='logo')P.logo='';else if(t.dataset.k==='photo')P.photo='';else{P.bgimg='';P.bg='none'}saveP();renderMain(true)},
   lookreset:()=>{for(const k of['theme','bg','dim','fh','fb','scale'])P[k]=PDEF[k];saveP();renderMain(true);toast('Оформление сброшено')},
   pinoff:t=>{if(!t.dataset.armed){t.dataset.armed=1;t.textContent='Точно отключить?';return}P.pin='';saveP();renderMain(true);toast('Код-пароль отключён')},
   key:t=>lockKey(t.dataset.v),
-  bk:()=>{const{photo,bgimg,pin,...pr}=P;if(pr.bg==='photo')pr.bg='none';const j=JSON.stringify({app:'shahrezade-planner',v:2,cards:S.cards,lists:S.lists,notes:S.notes,prefs:pr});
+  bk:()=>{const{photo,bgimg,logo,pin,...pr}=P;if(pr.bg==='photo')pr.bg='none';const j=JSON.stringify({app:'shahrezade-planner',v:2,cards:S.cards,lists:S.lists,notes:S.notes,prefs:pr});
     if(NATIVE&&App.share)return App.share(j);const fb=()=>{const a=$('#rs');a.value=j;a.select();toast('Скопируйте выделенный текст')};
     try{navigator.clipboard.writeText(j).then(()=>toast('Копия скопирована. Вставьте её в заметки.'),fb)}catch(e){fb()}},
   rst:t=>{let d=null;try{d=JSON.parse($('#rs').value)}catch(e){}
     if(!d||!Array.isArray(d.cards))return toast('Это не похоже на сохранённую копию');
     if(!t.dataset.armed){t.dataset.armed=1;t.textContent='Заменить текущие данные? Нажмите ещё раз';return}
     const old=S.cards;S.cards=d.cards.map(c=>({...c,id:c.id||newId()}));S.lists={...DEF,...d.lists};S.notes=d.notes||'';
-    if(d.prefs){P={...P,...d.prefs,photo:P.photo,bgimg:P.bgimg,pin:P.pin};saveP()}
+    if(d.prefs){P={...P,...d.prefs,photo:P.photo,bgimg:P.bgimg,logo:P.logo,pin:P.pin};saveP()}
     if(db){old.filter(c=>!S.cards.some(x=>x.id===c.id)).forEach(c=>dropCard(c.id));S.cards.forEach(putCard);putSettings()}else saveLocal();
     renderNav();renderMain(true);toast('Восстановлено: '+plural(S.cards.length,CRD))},
   cmdel:t=>{ED.comments.splice(+t.dataset.i,1);cms()}
@@ -643,13 +701,17 @@ document.addEventListener('keydown',e=>{if(!$('#lock').hidden){if(/^\d$/.test(e.
 document.addEventListener('input',e=>{const t=e.target;if(t.dataset.f==='q'){S.f.q=t.value;renderMain(true)}if(t.dataset.p==='dim'){P.dim=+t.value;applyP()}});
 document.addEventListener('change',e=>{const t=e.target;
   if(t.dataset.f&&t.dataset.f!=='q'){S.f[t.dataset.f]=t.value;renderBar();renderMain(true)}
-  if(t.dataset.p){const k=t.dataset.p;P[k]=k==='dim'?+t.value:t.value.trim();saveP();if(k==='name'||k==='role'||k==='ig'||k==='tt')renderMain(false)}
+  if(t.dataset.p){const k=t.dataset.p;P[k]=k==='dim'?+t.value:t.value.trim();saveP();if(k==='name'||k==='role'||k==='brand')renderMain(false)}
   if(t.dataset.adv){S.adv[t.dataset.adv]=t.value;renderMain(true)}
-  if(t.dataset.plck)$('#e-mb-'+t.dataset.plck).hidden=!t.checked;
+  if(t.dataset.plck){$('#e-mb-'+t.dataset.plck).hidden=!t.checked;pubBtns()}
   if(t.id==='notes'){S.notes=t.value;putSettings();toast('Выводы сохранены')}});
 document.addEventListener('submit',e=>{e.preventDefault();const f=e.target;
   if(f.id==='e-cmf'){const i=$('#e-cm'),v=i.value.trim();if(v){ED.comments.push({t:v,ts:Date.now()});i.value='';cms()}}
   if(f.dataset.pin){const v=$('#p-pin').value;if(!/^\d{4}$/.test(v))return toast('Код-пароль: ровно 4 цифры');P.pin=hashPin(v);saveP();renderMain(true);toast('Код-пароль включён')}
+  if(f.dataset.acc){const t=$('#a-t').value,v=$('#a-v').value.trim(),n=$('#a-n').value.trim();
+    if(!v)return toast('Укажите адрес аккаунта');if(t==='em'&&!/^\S+@\S+\.\S+$/.test(v))return toast('Проверьте адрес почты');
+    if((t==='wa'||t==='vb')&&dg(v).length<7)return toast('Укажите номер телефона с кодом страны');
+    P.accounts=[...(P.accounts||[]),{id:'a'+Date.now().toString(36),t,name:n,v}];saveP();renderBar();renderMain(true);toast('Аккаунт добавлен: '+NET[t][0])}
   if(f.dataset.list){const k=f.dataset.list,i=$('#l-'+k),v=i.value.trim();if(v&&!S.lists[k].includes(v)){S.lists[k].push(v);putSettings();renderMain(true);$('#l-'+k).focus()}}});
 const main=$('#main');let dragId=null;
 main.addEventListener('dragstart',e=>{const c=e.target.closest&&e.target.closest('.card');if(c){dragId=c.dataset.id;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',dragId)}});
@@ -661,6 +723,7 @@ let wasM=null;addEventListener('resize',()=>{setMode();if(wasM!==S.mobile){wasM=
 
 setMode();wasM=S.mobile;S.view=VIEWS[location.hash.slice(1)]?location.hash.slice(1):S.mobile&&VIEWS[P.start]?P.start:'board';if(S.mobile&&S.view==='board')S.view='ideas';
 applyP();if(P.pin)drawLock();renderAll();boot();
+addEventListener('online',()=>{if(S.view==='menu')renderMain(false)});addEventListener('offline',()=>{if(S.view==='menu')renderMain(false)});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)hidAt=Date.now();else if(P.pin&&hidAt&&Date.now()-hidAt>60000)drawLock()});
 function appBack(){if(!$('#lock').hidden)return NATIVE&&App.exit();if(ED)return closeEd();const home=VIEWS[P.start]?P.start:'ideas';if(S.view!==home)return go(home);if(NATIVE)App.exit()}
 </script>
